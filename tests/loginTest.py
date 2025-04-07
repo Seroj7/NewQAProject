@@ -19,7 +19,8 @@ class LoginTest(unittest.TestCase):
         self.loginPageObj.click_to_continue_button()
         self.loginPageObj.fill_password_field("AAB0663634")
         self.loginPageObj.click_to_sign_in_button()
-        sleep(2)
+
+        asse
 
     def tearDown(self):
         self.driver.close()

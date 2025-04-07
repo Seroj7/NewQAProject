@@ -1,29 +1,28 @@
 import unittest
 from selenium import webdriver
-from pages.searchResultPage import SearchResultPage
+from pages.productDetailsPage import ProductDetailsPage
 from pages.navigationBar import NavigationBar
 
-
-class SearchResultTest(unittest.TestCase):
-
+class ProductDetailsTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(10)
         self.driver.maximize_window()
         self.driver.delete_all_cookies()
-        self.driver.implicitly_wait(10)
         self.driver.get("https://www.amazon.com/ref=nav_logo")
-        self.searchResultObj = SearchResultPage(self.driver)
+        self.productDetailsPageObj = ProductDetailsPage(self.driver)
         self.navigationBarObj = NavigationBar(self.driver)
 
-    def test_click_to_first_product(self):
-        self.navigationBarObj.fill_search_field("AGV Helmet")
+    def test_get_product_name(self):
+        self.navigationBarObj.fill_search_field("AGV helmet")
         self.navigationBarObj.click_to_search_button()
-        self.searchResultObj.click_to_first_product()
+        self.productDetailsPageObj.get_product_name()
 
-    def test_click_to_second_product(self):
-        self.navigationBarObj.fill_search_field("AGV Helmet")
+    def test_get_product_price(self):
+        self.navigationBarObj.fill_search_field("AGV helmet")
         self.navigationBarObj.click_to_search_button()
-        self.searchResultObj.click_to_second_product()
+        self.productDetailsPageObj.get_product_price()
 
     def tearDown(self):
         self.driver.close()
+

@@ -11,7 +11,6 @@ class SearchResultPage():
         firstProductButton = self.driver.find_element(By.XPATH, '//h2[@aria-label="K1 S Street Helmet-Matte Black-XL"]')
         firstProductButton.click()
 
-
     def click_to_second_product(self):
         secondProductButton = self.driver.find_element(By.XPATH, '//h2[@aria-label="Sponsored Ad - Holt Helmet – Adult All-Season Helmet – Lightweight Protection for Skiing, Skating, Snowboarding & Snowsports – for Men & Women"]')
         secondProductButton.click()
