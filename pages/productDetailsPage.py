@@ -11,7 +11,7 @@ class ProductDetailsPage():
         cartButtonElement.click()
 
     def get_product_name(self):
-        productNameElement = self.driver.find_element( By.XPATH, '//h2[@aria-label="K1 S Sling Helmet Large Matte Black/Red"]')
+        productNameElement = self.driver.find_element(By.XPATH, '//h2[@aria-label="K1 S Sling Helmet Large Matte Black/Red"]')
         product_name = productNameElement.text
         print(product_name)
 
