@@ -1,15 +1,23 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
 class LoginPage():
-    def __init__(self):
-        pass
+    def __init__(self, driver: webdriver.Chrome):
+        self.driver = driver
 
     def fill_login_field(self, login):
-        pass
+        loginFieldElement = self.driver.find_element(By.ID, "ap_email")
+        loginFieldElement.send_keys(login)
 
     def click_to_continue_button(self):
-        pass
+        continueButtonElement = self.driver.find_element(By.ID, "continue")
+        continueButtonElement.click()
 
     def fill_password_field(self, password):
-        pass
+        passwordFieldElement = self.driver.find_element(By.ID, "ap_password")
+        passwordFieldElement.send_keys(password)
 
     def click_to_sign_in_button(self):
-        pass
+        signInButtonElement = self.driver.find_element(By.ID, "signInSubmit")
+        signInButtonElement.click()
