@@ -1,7 +1,9 @@
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
 
 
 class BasePage():
@@ -22,3 +24,6 @@ class BasePage():
 
     def _fill_text_field_by_element(self, element, text):
         element.send_keys(text)
+
+    def _move_to_element(self,element):
+        ActionChains(self.driver).move_to_element(element).perform()

@@ -19,7 +19,7 @@ class LoginPage(BasePage):
     def click_to_continue_button(self):
         continueButtonElement = self._find_element(self.__continueButtonLocator)
         self._click_to_web_element(continueButtonElement)
-
+                                               
     def fill_password_field(self, password):
         passwordFieldElement = self._find_element(self.__passwordFieldLocator)
         self._fill_text_field_by_element(passwordFieldElement, password)
